@@ -10,6 +10,11 @@ const Header = ({ title }) => {
   )
 }
 
+// Can set up default prop
+Header.defaultProps = {
+  title: 'Shopping List'
+}
+
 const styles = StyleSheet.create({
   header: {
     height: 60,
