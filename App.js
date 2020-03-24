@@ -1,13 +1,24 @@
 import React from 'react';
-import { View, Text } from 'react-native'
+import { View, Text, StyleSheet } from 'react-native'
 
 // flex in react native will default to column instead of row, flex param only supports single num
 const App = () => {
   return (
-    <View style={{flex: 1, justifyContent: 'center'}}>
-      <Text>Hello World</Text>
+    <View style={styles.container}>
+      <Text style={styles.text}>Hello World</Text>
     </View>
   )
 }
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  text: {
+    color: 'pink',
+    fontSize: 30,
+  }
+})
 export default App;
