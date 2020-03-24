@@ -1,8 +1,8 @@
 platform :ios, '9.0'
 require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
 
-target 'shoppingList' do
-  # Pods for shoppingList
+target 'ShoppingList' do
+  # Pods for ShoppingList
   pod 'FBLazyVector', :path => "../node_modules/react-native/Libraries/FBLazyVector"
   pod 'FBReactNativeSpec', :path => "../node_modules/react-native/Libraries/FBReactNativeSpec"
   pod 'RCTRequired', :path => "../node_modules/react-native/Libraries/RCTRequired"
@@ -34,9 +34,7 @@ target 'shoppingList' do
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
-  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
-
-  target 'shoppingListTests' do
+  target 'ShoppingListTests' do
     inherit! :search_paths
     # Pods for testing
   end
@@ -44,10 +42,10 @@ target 'shoppingList' do
   use_native_modules!
 end
 
-target 'shoppingList-tvOS' do
-  # Pods for shoppingList-tvOS
+target 'ShoppingList-tvOS' do
+  # Pods for ShoppingList-tvOS
 
-  target 'shoppingList-tvOSTests' do
+  target 'ShoppingList-tvOSTests' do
     inherit! :search_paths
     # Pods for testing
   end
