@@ -28,11 +28,17 @@ const App = () => {
       return prevItems.filter(item => item.id != id)
     })
   }
+  // add item function, prepends newer items to the beginning
+  const addItem = text => {
+    setItems(prevItems => {
+      return [{id: randomId(), text}, ...prevItems]
+    })
+  }
 
   return (
     <View style={styles.container}>
       <Header />
-      <AddItem />
+      <AddItem addItem={addItem}/>
       <FlatList 
         data={items} 
         renderItem={( {item} ) => <ListItem item={item} deleteItem={deleteItem}/>}

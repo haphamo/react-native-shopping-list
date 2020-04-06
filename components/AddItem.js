@@ -4,22 +4,32 @@ import Icon from 'react-native-vector-icons/dist/FontAwesome';
 
 
 // flex in react native will default to column instead of row, flex param only supports single num
-const AddItem = ({ title }) => {
+const AddItem = ({ addItem }) => {
   const [text, setText] = useState('')
 
   const onChange = textValue => setText(textValue)
 
   return (
     <View>
-      <TextInput style={styles.input} placeholder="Add item" onChangeText={onChange}/>
-      <TouchableOpacity style={styles.btn}>
+      <TextInput 
+        style={styles.input} 
+        placeholder="Add item" 
+        onChangeText={onChange}
+        value={text}
+        clearButtonMode="always"
+      />
+      <TouchableOpacity 
+        style={styles.btn} 
+        onPress={() => {
+          addItem(text)
+          setText("")
+        }}> 
         <Text style={styles.btnText}>
           <Icon 
             name="plus" 
             size={20}
-            color="green" 
           />
-          Add Item
+          Add New Item
         </Text>
       </TouchableOpacity>
     </View>
