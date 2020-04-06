@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { View, Text, StyleSheet, FlatList } from 'react-native'
 import Header from './components/Header';
 import ListItem from './components/ListItem';
+import AddItem from './components/AddItem';
 import 'react-native-get-random-values';
-
 
 // flex in react native will default to column instead of row, flex param only supports single num
 // function that creates a randomId
@@ -32,6 +32,7 @@ const App = () => {
   return (
     <View style={styles.container}>
       <Header />
+      <AddItem />
       <FlatList 
         data={items} 
         renderItem={( {item} ) => <ListItem item={item} deleteItem={deleteItem}/>}
