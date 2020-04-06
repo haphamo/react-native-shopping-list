@@ -36,7 +36,6 @@ const App = () => {
         data={items} 
         renderItem={( {item} ) => <ListItem item={item} deleteItem={deleteItem}/>}
         />
-       
     </View>
   )
 }
