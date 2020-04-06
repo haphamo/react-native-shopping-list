@@ -10,7 +10,7 @@ const ListItem = ({ item, deleteItem }) => {
         <Icon 
           name="remove" 
           size={30} 
-          color="red" 
+          color="#b22222" 
           onPress={() => deleteItem(item.id)}
         />
       </View>

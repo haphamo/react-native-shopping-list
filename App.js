@@ -31,7 +31,6 @@ const App = () => {
   // add item function, prepends newer items to the beginning
   const addItem = text => {
     const removeWhiteSpacesFromText = text.trim()
-    console.log(removeWhiteSpacesFromText)
     if(!removeWhiteSpacesFromText) {
       Alert.alert('Error', 'Please enter an item!')
     } else {
