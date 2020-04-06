@@ -19,17 +19,24 @@ const initalState = [
 ]
 
 const App = () => {
-  const [items, setItems] = useState([
-    {id: randomId(), text: 'Coffee'},
-    {id: randomId(), text: 'Eggs'},
-    {id: randomId(), text: 'Bananas'},
-    {id: randomId(), text: 'Sweet Potato'},
-  ])
+  const [items, setItems] = useState(initalState)
+
+  // delete item function
+  const deleteItem = (id) => {
+    setItems(prevItems => {
+      // returns a filtered array of items
+      return prevItems.filter(item => item.id != id)
+    })
+  }
 
   return (
     <View style={styles.container}>
       <Header />
-      <FlatList data={items} renderItem={( {item} ) => <ListItem item={item} />}/>
+      <FlatList 
+        data={items} 
+        renderItem={( {item} ) => <ListItem item={item} deleteItem={deleteItem}/>}
+        />
+       
     </View>
   )
 }
