@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'pink'
   },
   text: {
-    color: 'white',
+    color: 'grey',
     fontSize: 23,
     textAlign: 'center'
   }

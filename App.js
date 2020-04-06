@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet, FlatList } from 'react-native'
 import Header from './components/Header';
 import 'react-native-get-random-values';
 import { uuid } from 'uuidv4';
@@ -16,13 +16,21 @@ const initalState = [
   {id: randomId(), text: 'Bananas'},
   {id: randomId(), text: 'Sweet Potato'},
 ]
-console.log(randomId())
+
 const App = () => {
-  const [items, setItems] = useState(initalState)
+  const [items, setItems] = useState([
+    {id: randomId(), text: 'Coffee'},
+    {id: randomId(), text: 'Eggs'},
+    {id: randomId(), text: 'Bananas'},
+    {id: randomId(), text: 'Sweet Potato'},
+  ])
 
   return (
     <View style={styles.container}>
       <Header />
+      <FlatList data={items} renderItem={({item}) => {
+        <Text>{item.text}</Text>
+      }}/>
     </View>
   )
 }
